@@ -1,0 +1,108 @@
+<?xml-stylesheet href="../../xsltforms/build/xsltforms.xsl" type="text/xsl"?>
+<?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xsltforms-options debug="no"?>
+<?css-conversion no?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ev="http://www.w3.org/2001/xml-events"
+  xmlns:h="http://www.w3.org/1999/xhtml"
+  xmlns:xf="http://www.w3.org/2002/xforms">
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="dragster.style.css" />
+    <link rel="stylesheet" href="../../button.css" />
+
+
+
+
+    <model xmlns="http://www.w3.org/2002/xforms">
+      <instance>
+        <data xmlns="">
+          <test>Test | ABC</test>
+        </data>
+      </instance>
+    </model>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <group xmlns="http://www.w3.org/2002/xforms">
+
+        <h:h2>Dragster - draggable elements inside a draggable element
+          demo</h:h2>
+        <h:p>The example below is a bit more advanced. It shows the possibility
+          of implementing a drag'n'drop functionality inside a draggable
+          element.</h:p>
+        <div class="regions" id="container-1"
+          xmlns="http://www.w3.org/1999/xhtml">
+          <!--<div class="dragster-region">
+            <div class="dragster-block">1.1</div>
+            <div class="dragster-block">
+                <h3>Dragster Block 1.2</h3>
+                <svg><use xlink:href="#logo"></use></svg>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="dragster-block">1.3</div>
+            <div class="dragster-block">1.4</div>
+        </div>-->
+          <div style="width:100%;">
+
+            <div class="dragster-block">
+              <h3>2.2 Second region - independent</h3>
+              <div class="regions" id="container-2">
+                <div class="dragster-region">
+                  <xf:trigger class="dragster-block btn" ref="test">
+                    <xf:label ref="."/>
+                    
+                  </xf:trigger>
+
+                  <div class="dragster-block">MARC</div>
+                  <div class="dragster-block">1.1</div>
+                  <div class="dragster-block">1.3</div>
+                  <div class="dragster-block">1.4</div>
+                </div>
+                <div class="dragster-region">
+                  <div class="dragster-block">Work</div>
+
+                </div>
+
+                <div class="dragster-region">
+                  <xf:group class="dragster-block">MARC</xf:group>
+                  <div class="dragster-block">1.1</div>
+                  <div class="dragster-block">1.3</div>
+                  <div class="dragster-block">1.4</div>
+                </div>
+                <div class="dragster-region">
+                  <div class="dragster-block">Work</div>
+
+                </div>
+
+                <div class="dragster-region">
+                  <div class="dragster-block">MARC</div>
+                  <div class="dragster-block">1.1</div>
+                  <div class="dragster-block">1.3</div>
+                  <div class="dragster-block">1.4</div>
+                </div>
+                <div class="dragster-region">
+                  <div class="dragster-block">Work</div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </group>
+    </div>
+    <!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->    
+    <script src="dragster.js"></script>
+    <script>
+      var d1 = Dragster({
+            regionSelector: '#container-1 > .dragster-region',
+            elementSelector: '#container-1 > .dragster-region > .dragster-block',
+        });
+      var d2 = Dragster({
+            cloneElements: false,
+            regionSelector: '#container-2 > .dragster-region',
+            elementSelector: '#container-2 > .dragster-region > .dragster-block',
+        });
+    </script>
+  </body>
+</html>
