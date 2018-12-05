@@ -18,18 +18,25 @@ body {
     width: 100%;
     max-width: 80vw;
     margin: auto;
-    font: 100%/1.4 Arial, sans-serif;
-    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 [draggable] {
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-      user-select: none;
-  -khtml-user-drag: element;
-  -webkit-user-drag: element;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
 }
 
 .regions {
@@ -40,7 +47,7 @@ body {
 }
 
 .dragster-region {
-    flex: 1 1 30%;
+    flex: 1 1 40%;
     outline: 1px solid blue;
     padding: 1rem;
     vertical-align: top;
@@ -74,10 +81,10 @@ body {
     left: 0;
     cursor: move;
     opacity: 1;
-    box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
-    transition:
-        opacity .3s cubic-bezier(.4, 0, .2, 1),
-        box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+    transition: 
+    opacity .3s cubic-bezier(.4, 0, .2, 1), 
+box-shadow .3s cubic-bezier(.4, 0, .2, 1);
 }
 
 .dragster-block {
@@ -115,5 +122,5 @@ body {
 }
 
 .dragster-block .dragster-block {
-    background: #ddd;
+    
 }
